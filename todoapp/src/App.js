@@ -7,6 +7,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<UserLogin />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/userLogin" element={<UserLogin />} />
         <Route path="/todoapp" element={<TodoApp />} />
