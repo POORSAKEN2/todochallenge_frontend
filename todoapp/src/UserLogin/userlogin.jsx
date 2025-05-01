@@ -13,6 +13,7 @@ const UserLogin = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  console.log("Form Data:", formData); // Log form data for debugging
 
   try {
     const response = await axios.post(
@@ -25,8 +26,16 @@ const handleSubmit = async (e) => {
       }
     );
 
-    // Extract data from response
+
     const { message, token, user } = response.data;
+
+  
+    alert(
+      `${message}\n\nUser: ${user.username}\nToken: ${token.substring(
+        0,
+        20
+      )}...`
+    );
 
     console.log("Message:", message);
     console.log("Token:", token);
@@ -46,6 +55,7 @@ const handleSubmit = async (e) => {
     );
   }
 };
+
 
 
 
